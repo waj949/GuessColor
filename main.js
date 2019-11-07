@@ -6,8 +6,7 @@ function generateRgb(){
 	var thirdColor = Math.floor(Math.random() * 256);
 	return '('+firstColor + ' ,' + secondColor + ' ,' +thirdColor+')';
 }
-var test = generateRgb()
-console.log(test);
+
 
 //$('body').css('background', 'rgb' + test);
 function fillArrayOfColors(difficulity){
@@ -24,17 +23,25 @@ function fillArrayOfColors(difficulity){
 	for(i = 0; i < acc; i++){
 		arrayOfColors[i] = generateRgb();
 	}
-	console.log(arrayOfColors);
     return arrayOfColors;
 }
 
 var arrayOfColors = fillArrayOfColors('hard');
+console.log(arrayOfColors);
 
 function fillTheDivs(arrayOfColors){
 	for(i = 0; i < arrayOfColors.length; i++){
-		$('.'+i).css('background', 'rgb'+ arrayOfColors[i])
+		$('.'+i).css('background', 'rgb'+ arrayOfColors[i]);
 	}
 }
 
 fillTheDivs(arrayOfColors);
+var correctIndex = Math.floor(Math.random() * 10);
+var correctOne  = arrayOfColors[correctIndex];
+console.log(correctOne);
+
+$('.' + correctIndex).on('click', function(){
+	alert('Hi');
+})
+
 
