@@ -40,8 +40,25 @@ var correctIndex = Math.floor(Math.random() * 10);
 var correctOne  = arrayOfColors[correctIndex];
 console.log(correctOne);
 
-$('.' + correctIndex).on('click', function(){
+function win(){
+	$('.' + correctIndex).on('click', function(){
+		for(i = 0; i < arrayOfColors.length; i++){
+			$('.'+i).css('background', 'rgb'+ arrayOfColors[correctIndex]);
+		};
+		window.setTimeout( function(){
+			var $winnerDiv = $('<div id = "win"> Congratulation </div>');
+			$('.grid-container').replaceWith($winnerDiv);
+		} , 1000);		
+	});
+
+		
+}
+
+var winner = win();
+
+if(winner){
 	alert('Hi');
-})
+}
+
 
 
