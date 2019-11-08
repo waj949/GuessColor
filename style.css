@@ -23,19 +23,27 @@ section{
 	justify-content: center;
 	background:#F1F7EE;
 	opacity: 0.6;
+	border-radius: 6%;
+	box-shadow: 2px 2px 2px 1px #FFF7EE;
+	grid-gap: 40px;
 }
 
 
 .grid-item{
 	color:blue;
-	border: 1px solid black;
+	border: 1px solid #ddd;
 	margin: 15px;
+	padding: 5px;
     text-align: center;
     height: 150px;
     border-radius: 50%;
     align-self: center;
     opacity: 0.85;
     opacity:unset;
+}
+
+.grid-item:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 
@@ -91,4 +99,5 @@ h1{
 	margin: 20px auto;
 	padding: 10px 10px;
 	text-align: center;
+	margin-bottom: 15px;
 }

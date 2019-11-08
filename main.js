@@ -7,8 +7,6 @@
 	return '( '+firstColor + ', ' + secondColor + ', ' +thirdColor+' )';
 }
 
-
-//$('body').css('background', 'rgb' + test);
 function fillArrayOfColors(difficulity){
 	var acc = 0;
 	var arrayOfColors = [];
@@ -49,7 +47,7 @@ function win(){
 		window.setTimeout( function(){
 			var $winnerDiv = $('<div id = "win"> <p id = "win-message">Congratulation You Won !</p> </div>');
 			$('.grid-container').replaceWith($winnerDiv);
-		} , 1000);		
+		} , 800);		
 	});		
 }
 
@@ -62,10 +60,11 @@ function lose(){
 	for(let i = 0; i < arrayOfColors.length; i++){
 		arrOfIndexes.push(i);
 	};
+
 	arrOfIndexes.splice(correctIndex, 1)
 	console.log(arrOfIndexes);
 	
-		for(let i = arrOfIndexes[0]; i < arrOfIndexes.length; i++){
+		for(let i = arrOfIndexes[0]; i <= arrOfIndexes.length; i++){
 			$('.' + i).on('click', function(){
 				var $nope = $('<div id="nope"><p id="no"> Nope!</br> Try again </p></div>')
 				if(i !== correctIndex){
@@ -74,9 +73,7 @@ function lose(){
 				clicks++;
 				console.log(clicks)
 				if(clicks === 3){
-					
 					$('.grid-container').replaceWith($gameOver);
-
 				}
 			});
 		}
