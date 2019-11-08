@@ -73,7 +73,7 @@ function lose(){
 				clicks++;
 				console.log(clicks)
 				if(clicks === 3){
-					$('.grid-container').replaceWith($gameOver);
+				   $('.grid-container').replaceWith($gameOver);
 				}
 			});
 		}
