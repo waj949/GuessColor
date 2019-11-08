@@ -60,3 +60,17 @@ h1{
 	text-align: center;
 	font-size: 1.5em;
 }
+
+#game-over{
+	width: 50%;
+	height: 500px;
+	background: gold;
+	text-align: center;
+	display: grid;
+	justify-content: center;
+}
+
+#over{
+	font-size: 2em;
+	margin: auto;
+}

@@ -53,13 +53,6 @@ function win(){
 }
 
 win();
-function wrongAnswer(index){
-	var $nope = $('<div id="nope"><p id="no"> Nope!</br> Try again </p></div>')
-	$('.' + index).on('click', function(){
-		$('.' + index).replaceWith($nope);
-	});
-}
-
 
 
 function lose(){
@@ -68,13 +61,29 @@ function lose(){
 	for(let i = 0; i < arrayOfColors.length; i++){
 		arrOfIndexes.push(i);
 	};
-	console.log('arrayOfColors', arrayOfColors);
-	console.log('correctIndex', correctIndex);
-	console.log('arrOfIndexes' , arrOfIndexes);
 	arrOfIndexes.splice(correctIndex, 1)
 	console.log(arrOfIndexes);
 	
-}
+		for(let i = arrOfIndexes[0]; i < arrOfIndexes.length; i++){
+			$('.' + i).on('click', function(){
+				var $nope = $('<div id="nope"><p id="no"> Nope!</br> Try again </p></div>')
+				if(i !== correctIndex){
+					$('.' + i).replaceWith($nope);
+				}
+				clicks++;
+				console.log(clicks)
+				if(clicks === 3){
+					var $gameOver = $('<div id ="game-over"><p id="over">Game Over</p></div>');
+					$('.grid-container').replaceWith($gameOver);
+
+				}
+			});
+		}
+	}
+	
+
+	
+
 
 lose();
 
