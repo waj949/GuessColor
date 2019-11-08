@@ -46,19 +46,23 @@ function win(){
 			$('.'+i).css('background', 'rgb'+ arrayOfColors[correctIndex]);
 		};
 		window.setTimeout( function(){
-			var $winnerDiv = $('<div id = "win"> Congratulation </div>');
+			var $winnerDiv = $('<div id = "win"> <p id = "win-message">Congratulation You Won !</p> </div>');
 			$('.grid-container').replaceWith($winnerDiv);
 		} , 1000);		
-	});
-
-		
+	});		
 }
 
-var winner = win();
+win();
 
-if(winner){
-	alert('Hi');
+function lose(){
+	var clicks = 0;
+	var arrayOfWrongColors = arrayOfColors.splice(correctIndex, 1); 
+	console.log(arrayOfColors);
+	console.log(correctIndex);
+	console.log(arrayOfWrongColors);
 }
+
+lose();
 
 
 

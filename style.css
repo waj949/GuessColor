@@ -38,4 +38,11 @@ h1{
 	height: 500px;
 	background: gold;
 	text-align: center;
+	display: grid;
+	justify-content: center;
+}
+
+#win-message{
+	font-size: 2em;
+	margin: auto;
 }
