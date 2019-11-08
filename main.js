@@ -1,6 +1,6 @@
 // create a function that generate random rgb color 
-
-function generateRgb(){
+ function game(){
+ 	function generateRgb(){
 	var firstColor = Math.floor(Math.random() * 256);
 	var secondColor = Math.floor(Math.random() * 256);
 	var thirdColor = Math.floor(Math.random() * 256);
@@ -39,6 +39,7 @@ fillTheDivs(arrayOfColors);
 var correctIndex = Math.floor(Math.random() * 9);
 var correctOne  = arrayOfColors[correctIndex];
 console.log(correctOne);
+$('#rgb').text('RBG Color:' + correctOne);
 
 function win(){
 	$('.' + correctIndex).on('click', function(){
@@ -80,12 +81,15 @@ function lose(){
 			});
 		}
 	}
-	
+  lose();
+ }
 
-	
 
+function replay(){
+	$('section').html('');
+	game();
+}
 
-lose();
 
 
 
