@@ -36,7 +36,7 @@ function fillTheDivs(arrayOfColors){
 }
 
 fillTheDivs(arrayOfColors);
-var correctIndex = Math.floor(Math.random() * 10);
+var correctIndex = Math.floor(Math.random() * 9);
 var correctOne  = arrayOfColors[correctIndex];
 console.log(correctOne);
 
@@ -53,13 +53,27 @@ function win(){
 }
 
 win();
+function wrongAnswer(index){
+	var $nope = $('<div id="nope"><p id="no"> Nope!</br> Try again </p></div>')
+	$('.' + index).on('click', function(){
+		$('.' + index).replaceWith($nope);
+	});
+}
+
+
 
 function lose(){
 	var clicks = 0;
-	var arrayOfWrongColors = arrayOfColors.splice(correctIndex, 1); 
-	console.log(arrayOfColors);
-	console.log(correctIndex);
-	console.log(arrayOfWrongColors);
+	var arrOfIndexes = []
+	for(let i = 0; i < arrayOfColors.length; i++){
+		arrOfIndexes.push(i);
+	};
+	console.log('arrayOfColors', arrayOfColors);
+	console.log('correctIndex', correctIndex);
+	console.log('arrOfIndexes' , arrOfIndexes);
+	arrOfIndexes.splice(correctIndex, 1)
+	console.log(arrOfIndexes);
+	
 }
 
 lose();
