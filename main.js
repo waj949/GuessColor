@@ -4,7 +4,7 @@
 	var firstColor = Math.floor(Math.random() * 256);
 	var secondColor = Math.floor(Math.random() * 256);
 	var thirdColor = Math.floor(Math.random() * 256);
-	return '('+firstColor + ' ,' + secondColor + ' ,' +thirdColor+')';
+	return '( '+firstColor + ', ' + secondColor + ', ' +thirdColor+' )';
 }
 
 
@@ -39,7 +39,7 @@ fillTheDivs(arrayOfColors);
 var correctIndex = Math.floor(Math.random() * 9);
 var correctOne  = arrayOfColors[correctIndex];
 console.log(correctOne);
-$('#rgb').text('RBG Color:' + correctOne);
+$('#rgb').text('RBG Color: ' + correctOne);
 
 function win(){
 	$('.' + correctIndex).on('click', function(){
@@ -55,7 +55,7 @@ function win(){
 
 win();
 
-
+var $gameOver = $('<div id ="game-over"><p id="over">Game Over</p></div>');
 function lose(){
 	var clicks = 0;
 	var arrOfIndexes = []
@@ -74,7 +74,7 @@ function lose(){
 				clicks++;
 				console.log(clicks)
 				if(clicks === 3){
-					var $gameOver = $('<div id ="game-over"><p id="over">Game Over</p></div>');
+					
 					$('.grid-container').replaceWith($gameOver);
 
 				}
@@ -84,12 +84,7 @@ function lose(){
   lose();
  }
 
-
-function replay(){
-	$('section').html('');
-	game();
-}
-
+game();
 
 
 
