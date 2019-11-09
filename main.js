@@ -1,6 +1,7 @@
-// create a function that generate random rgb color
+$( document ).ready(function() {
+  // create a function that generate random rgb color
 	//generate an rgb color
-function generateRgb(){
+  function generateRgb(){
 	var firstColor  = Math.floor(Math.random() * 256);
 	var secondColor = Math.floor(Math.random() * 256);
 	var thirdColor  = Math.floor(Math.random() * 256);
@@ -88,9 +89,11 @@ function lose(){
 			});
 		}
 	}
-  
-
  lose();
+});
+
+
+
 
 
 
