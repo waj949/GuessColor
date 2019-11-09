@@ -45,7 +45,7 @@ fillTheDivs(arrayOfColors);
 var correctIndex = Math.floor(Math.random() * 9);
 var correctOne  = arrayOfColors[correctIndex];
 // appending the correct div to the top of the page
-$('#rgb').text('RBG Color: ' + correctOne);
+$('#rgb').text('RGB Color: ' + correctOne);
 
 
 // win function will append the win div if the user clicked on the right choice
